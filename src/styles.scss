@@ -33,6 +33,23 @@ $angular-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($angular-theme);
 
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$toolbox-social-theme: mat.define-light-theme((color: (primary: $angular-primary, accent: $angular-accent, warn: $angular-warn)));
+$toolbox-social-theme-dark: mat.define-dark-theme((color: (primary: $angular-primary, accent: $angular-accent, warn: $angular-warn)));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+//@include mat.all-component-themes($toolbox-social-theme);
+.theme-light {
+  @include mat.all-component-themes($toolbox-social-theme);
+}
+
+.theme-dark {
+  @include mat.all-component-themes($toolbox-social-theme-dark);
+}
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }

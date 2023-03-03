@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Meta, Title} from "@angular/platform-browser";
 
 @Component({
@@ -6,9 +6,15 @@ import {Meta, Title} from "@angular/platform-browser";
   templateUrl: './page1.component.html',
   styleUrls: ['./page1.component.scss']
 })
-export class Page1Component {
+export class Page1Component implements OnInit {
 
-  constructor(private meta: Meta, private title: Title) {
+  constructor(
+    private title: Title,
+    private meta: Meta
+  ) {
+  }
+
+  ngOnInit(): void {
     this.meta.addTags([
       {name: 'description', content: 'Page - 1 Home page of SEO friendly app'},
       {name: 'author', content: 'Page 1 - Rennan'},

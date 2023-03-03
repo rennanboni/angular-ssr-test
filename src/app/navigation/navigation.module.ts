@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {NavigationComponent} from "./navigation.component";
 import {LayoutModule} from "@angular/cdk/layout";
 import {MatToolbarModule} from "@angular/material/toolbar";
@@ -8,11 +8,13 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatIconModule} from "@angular/material/icon";
 import {MatListModule} from "@angular/material/list";
 import {RouterModule} from "@angular/router";
-import { Page2Component } from '../pages/page2/page2.component';
 import {Page1Module} from "../pages/page1/page1.module";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {Page2Module} from "../pages/page2/page2.module";
 
 @NgModule({
-  declarations: [NavigationComponent, Page2Component],
+  declarations: [NavigationComponent],
+  exports: [NavigationComponent],
   imports: [
     // Common
     CommonModule,
@@ -20,6 +22,7 @@ import {Page1Module} from "../pages/page1/page1.module";
 
     // Material
     LayoutModule,
+    FlexLayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
@@ -27,8 +30,8 @@ import {Page1Module} from "../pages/page1/page1.module";
     MatListModule,
 
     // Pages
-    Page1Module
-  ],
-  exports: [NavigationComponent]
+    Page1Module,
+    Page2Module,
+  ]
 })
 export class NavigationModule { }
